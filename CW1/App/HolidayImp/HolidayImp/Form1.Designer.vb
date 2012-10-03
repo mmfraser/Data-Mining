@@ -28,6 +28,13 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.btnMinMax = New System.Windows.Forms.Button()
+        Me.btnCalcAccuracy = New System.Windows.Forms.Button()
+        Me.btnSetClassField = New System.Windows.Forms.Button()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.lblClassField = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblNNField = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -80,11 +87,79 @@ Partial Class Form1
         Me.btnMinMax.Text = "Min-Max Normalisation"
         Me.btnMinMax.UseVisualStyleBackColor = True
         '
+        'btnCalcAccuracy
+        '
+        Me.btnCalcAccuracy.Location = New System.Drawing.Point(532, 12)
+        Me.btnCalcAccuracy.Name = "btnCalcAccuracy"
+        Me.btnCalcAccuracy.Size = New System.Drawing.Size(184, 23)
+        Me.btnCalcAccuracy.TabIndex = 6
+        Me.btnCalcAccuracy.Text = "Calculate Accuracy"
+        Me.btnCalcAccuracy.UseVisualStyleBackColor = True
+        '
+        'btnSetClassField
+        '
+        Me.btnSetClassField.Location = New System.Drawing.Point(723, 11)
+        Me.btnSetClassField.Name = "btnSetClassField"
+        Me.btnSetClassField.Size = New System.Drawing.Size(115, 23)
+        Me.btnSetClassField.TabIndex = 7
+        Me.btnSetClassField.Text = "Set Class Field"
+        Me.btnSetClassField.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(885, 402)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(60, 13)
+        Me.Label3.TabIndex = 9
+        Me.Label3.Text = "Class Field:"
+        '
+        'lblClassField
+        '
+        Me.lblClassField.AutoSize = True
+        Me.lblClassField.Location = New System.Drawing.Point(951, 402)
+        Me.lblClassField.Name = "lblClassField"
+        Me.lblClassField.Size = New System.Drawing.Size(0, 13)
+        Me.lblClassField.TabIndex = 10
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(736, 402)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(51, 13)
+        Me.Label4.TabIndex = 11
+        Me.Label4.Text = "NN Field:"
+        '
+        'lblNNField
+        '
+        Me.lblNNField.AutoSize = True
+        Me.lblNNField.Location = New System.Drawing.Point(793, 402)
+        Me.lblNNField.Name = "lblNNField"
+        Me.lblNNField.Size = New System.Drawing.Size(0, 13)
+        Me.lblNNField.TabIndex = 12
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(844, 11)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(115, 23)
+        Me.Button2.TabIndex = 13
+        Me.Button2.Text = "Set NN Field"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1002, 438)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.lblNNField)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.lblClassField)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.btnSetClassField)
+        Me.Controls.Add(Me.btnCalcAccuracy)
         Me.Controls.Add(Me.btnMinMax)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
@@ -103,5 +178,12 @@ Partial Class Form1
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents btnMinMax As System.Windows.Forms.Button
+    Friend WithEvents btnCalcAccuracy As System.Windows.Forms.Button
+    Friend WithEvents btnSetClassField As System.Windows.Forms.Button
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents lblClassField As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lblNNField As System.Windows.Forms.Label
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 
 End Class

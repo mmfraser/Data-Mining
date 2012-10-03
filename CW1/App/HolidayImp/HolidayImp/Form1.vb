@@ -2,6 +2,8 @@
 
 Public Class Form1
     Private data As DataTable
+    Private selectedClassIndex As Integer
+    Private selectedNNIndex As Integer
 
    
 
@@ -138,5 +140,69 @@ Public Class Form1
             MinMaxOnGridColumn(DataGridView1, columnNo)
         Next
 
+    End Sub
+
+    Private Sub btnCalcAccuracy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCalcAccuracy.Click
+
+        Dim selectedCols As New List(Of Integer)
+
+        For i = 0 To DataGridView1.SelectedCells.Count - 1
+            selectedCols.Add(DataGridView1.SelectedCells.Item(i).ColumnIndex)
+        Next
+
+        If selectedCols.Count <> 2 Then
+            Throw New Exception("Must be only two columns selected")
+        End If
+
+        Dim accuracy As Integer = 0
+
+        CheckAccuracy(DataGridView1, 8, 9, 1)
+
+    End Sub
+
+
+    Public Function CheckAccuracy(ByVal data As DataGridView, ByVal classColumnNo As Integer, ByVal nnColumnNo As Integer, ByVal currentRowNo As Integer) As Integer
+
+        Dim nnVal As Double = CDec(data.Rows(currentRowNo).Cells(nnColumnNo).Value)
+        Dim nnClass As Object = data.Rows(currentRowNo).Cells(classColumnNo).Value
+
+        Dim closestNNVal As Double
+        Dim closestClass As Object = (From x In data.Rows.Cast(Of DataGridViewRow)() Where x.Index <> currentRowNo Select dataClass = x.Cells(classColumnNo).Value, nn = CDbl(x.Cells(nnColumnNo).Value) Order By Math.Abs(nn - nnVal)).First.dataClass
+
+        If nnClass Is closestClass Then
+            Return 1
+        Else
+            Return 0
+        End If
+    End Function
+
+    Private Sub btnSetClassField_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSetClassField.Click
+        Dim selectedCols As New List(Of Integer)
+
+        For i = 0 To DataGridView1.SelectedCells.Count - 1
+            selectedCols.Add(DataGridView1.SelectedCells.Item(i).ColumnIndex)
+        Next
+
+        If selectedCols.Count <> 1 Then
+            Throw New Exception("Must be only one column selected")
+        End If
+
+        selectedClassIndex = selectedCols.First
+        lblClassField.Text = selectedClassIndex.ToString
+    End Sub
+
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        Dim selectedCols As New List(Of Integer)
+
+        For i = 0 To DataGridView1.SelectedCells.Count - 1
+            selectedCols.Add(DataGridView1.SelectedCells.Item(i).ColumnIndex)
+        Next
+
+        If selectedCols.Count <> 1 Then
+            Throw New Exception("Must be only one column selected")
+        End If
+
+        selectedNNIndex = selectedCols.First
+        lblNNField.Text = selectedClassIndex.ToString
     End Sub
 End Class
