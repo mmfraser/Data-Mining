@@ -1,0 +1,12 @@
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\DMML\bin\Debug\DMML.exe
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\DMML\bin\Debug\DMML.pdb
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\DMML\bin\Debug\DMML.xml
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\DMML\bin\Debug\DAL.dll
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\DMML\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\DMML\obj\x86\Debug\DMML.Form1.resources
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\DMML\obj\x86\Debug\DMML.Resources.resources
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\DMML\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\DMML\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\DMML\obj\x86\Debug\DMML.exe
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\DMML\obj\x86\Debug\DMML.xml
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\DMML\obj\x86\Debug\DMML.pdb

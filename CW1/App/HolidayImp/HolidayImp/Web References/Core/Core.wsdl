@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AuthenticateUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticateUserResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="LogoutUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogoutUserResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="StartImpersonation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userToImpersonate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StartImpersonationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="StopImpersonation">
+        <s:complexType />
+      </s:element>
+      <s:element name="StopImpersonationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetCurrentUserLevel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentUserLevelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetCurrentUserLevelResult" type="tns:UserLevel" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="UserLevel">
+        <s:restriction base="s:string">
+          <s:enumeration value="ADMIN" />
+          <s:enumeration value="PMO" />
+          <s:enumeration value="USER" />
+          <s:enumeration value="NON_USER" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AuthenticateUserSoapIn">
+    <wsdl:part name="parameters" element="tns:AuthenticateUser" />
+  </wsdl:message>
+  <wsdl:message name="AuthenticateUserSoapOut">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogoutUserSoapIn">
+    <wsdl:part name="parameters" element="tns:LogoutUser" />
+  </wsdl:message>
+  <wsdl:message name="LogoutUserSoapOut">
+    <wsdl:part name="parameters" element="tns:LogoutUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="StartImpersonationSoapIn">
+    <wsdl:part name="parameters" element="tns:StartImpersonation" />
+  </wsdl:message>
+  <wsdl:message name="StartImpersonationSoapOut">
+    <wsdl:part name="parameters" element="tns:StartImpersonationResponse" />
+  </wsdl:message>
+  <wsdl:message name="StopImpersonationSoapIn">
+    <wsdl:part name="parameters" element="tns:StopImpersonation" />
+  </wsdl:message>
+  <wsdl:message name="StopImpersonationSoapOut">
+    <wsdl:part name="parameters" element="tns:StopImpersonationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentUserLevelSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentUserLevel" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentUserLevelSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentUserLevelResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CoreSoap">
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:input message="tns:AuthenticateUserSoapIn" />
+      <wsdl:output message="tns:AuthenticateUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUser">
+      <wsdl:input message="tns:LogoutUserSoapIn" />
+      <wsdl:output message="tns:LogoutUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StartImpersonation">
+      <wsdl:input message="tns:StartImpersonationSoapIn" />
+      <wsdl:output message="tns:StartImpersonationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StopImpersonation">
+      <wsdl:input message="tns:StopImpersonationSoapIn" />
+      <wsdl:output message="tns:StopImpersonationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentUserLevel">
+      <wsdl:input message="tns:GetCurrentUserLevelSoapIn" />
+      <wsdl:output message="tns:GetCurrentUserLevelSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CoreSoap" type="tns:CoreSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AuthenticateUser">
+      <soap:operation soapAction="http://tempuri.org/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUser">
+      <soap:operation soapAction="http://tempuri.org/LogoutUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartImpersonation">
+      <soap:operation soapAction="http://tempuri.org/StartImpersonation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopImpersonation">
+      <soap:operation soapAction="http://tempuri.org/StopImpersonation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentUserLevel">
+      <soap:operation soapAction="http://tempuri.org/GetCurrentUserLevel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CoreSoap12" type="tns:CoreSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AuthenticateUser">
+      <soap12:operation soapAction="http://tempuri.org/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogoutUser">
+      <soap12:operation soapAction="http://tempuri.org/LogoutUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartImpersonation">
+      <soap12:operation soapAction="http://tempuri.org/StartImpersonation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StopImpersonation">
+      <soap12:operation soapAction="http://tempuri.org/StopImpersonation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentUserLevel">
+      <soap12:operation soapAction="http://tempuri.org/GetCurrentUserLevel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Core">
+    <wsdl:port name="CoreSoap" binding="tns:CoreSoap">
+      <soap:address location="http://cswebserve/TimeEntryV2WS_Live/Core.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CoreSoap12" binding="tns:CoreSoap12">
+      <soap12:address location="http://cswebserve/TimeEntryV2WS_Live/Core.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

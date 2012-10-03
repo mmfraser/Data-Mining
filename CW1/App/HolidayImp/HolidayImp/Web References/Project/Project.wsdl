@@ -1,0 +1,1197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetProjectByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projectId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectByIDResult" type="tns:Project" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Project">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_NUMBER" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROJECT_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CUSTOMER_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CUSTOMER_OBJECT" type="tns:Customer" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROJECT_DESCRIPTION" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="START_DATE" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TARGET_COMPLETION_DATE" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ACTUAL_COMPLETION_DATE" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ACTIVE" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutputValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHASES" type="tns:ArrayOfProject_Phase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Customer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CUST_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CUSTOMER_NAME" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProject_Phase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Project_Phase" nillable="true" type="tns:Project_Phase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Project_Phase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_PHASE_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TARGET_HOURS_PP" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TARGET_HOURS_LOE" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="START_TARGET" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="START_ACTUAL" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="END_TARGET" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="END_ACTUAL" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PHASE_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHASE" type="tns:Phase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Phase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PHASE_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHASE_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHASE_DESCRIPTION" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProjects">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProjectsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectsResult" type="tns:ArrayOfProject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Project" nillable="true" type="tns:Project" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projectNumber" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="customerCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="projectDescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="targetCompletion" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="active" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="actualCompletion" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProjectResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newProjectObj" type="tns:Project" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProjectResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddPhaseToProject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projectId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="targetHoursPP" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="targetHoursLoE" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="targetStart" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="actualStart" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="targetEnd" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="actualEnd" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="phaseId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddPhaseToProjectResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateProjectPhase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oOldPhase" type="tns:Project_Phase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProjectPhaseResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddProjectRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projectId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="dayRate" type="s:double" />
+            <s:element minOccurs="0" maxOccurs="1" name="roleName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProjectRoleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateProjectRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="projectRole" type="tns:Project_Role" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Project_Role">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_ROLE_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROJECT_OBJECT" type="tns:Project" />
+          <s:element minOccurs="1" maxOccurs="1" name="DAY_RATE" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="ROLE_NAME" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateProjectRoleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProjectRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projectId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectRolesResult" type="tns:ArrayOfProject_Role" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProject_Role">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Project_Role" nillable="true" type="tns:Project_Role" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProjectPhases">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projectId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectPhasesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectPhasesResult" type="tns:ArrayOfProject_Phase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRoleToPhase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="roleId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="phaseId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="totalHours" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddRoleToPhaseResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetGenericPhases">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetGenericPhasesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGenericPhasesResult" type="tns:ArrayOfPhase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPhase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Phase" nillable="true" type="tns:Phase" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProjectPhaseRoleData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="phaseId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectPhaseRoleDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectPhaseRoleDataResult" type="tns:ArrayOfProject_Phase_Role" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProject_Phase_Role">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Project_Phase_Role" nillable="true" type="tns:Project_Phase_Role" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Project_Phase_Role">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_PHASE_ROLE_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_ROLE_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROJECT_ROLE" type="tns:Project_Role" />
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_PHASE_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TOTAL_HOURS" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateProjectPhaseRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="role" type="tns:Project_Phase_Role" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProjectPhaseRoleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteProjectPhaseRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="phaseRoleId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteProjectPhaseRoleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTimeAssignedToRoleOnPhase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projectPhaseId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="roleId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeAssignedToRoleOnPhaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTimeAssignedToRoleOnPhaseResult" nillable="true" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeAssignedToPhase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projectPhaseId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeAssignedToPhaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetTimeAssignedToPhaseResult" nillable="true" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectUsersOnRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projectId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectUsersOnRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectUsersOnRolesResult" type="tns:ArrayOfProject_User_Role" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProject_User_Role">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Project_User_Role" nillable="true" type="tns:Project_User_Role" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Project_User_Role">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_USER_ROLE_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_ROLE_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="USER_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="USER" type="tns:User" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROJECT_ROLE" type="tns:Project_Role" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="User">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="USER_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="USER_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="USER_EMAIL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SEND_NAG_EMAIL" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IS_ADMIN" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IS_PMO" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IS_ACTIVE" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROJECT_PLAN_NAME" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddProjectUserRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projectRoleId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddProjectUserRoleResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProjectActivities">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProjectActivitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectActivitiesResult" type="tns:ArrayOfActivity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfActivity">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Activity" nillable="true" type="tns:Activity" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Activity">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ACTIVITY_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ACTIVITY_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ACTIVITY_DESCRIPTION" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ACTIVITY_ACTIVE" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetActiveProjectActivities">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetActiveProjectActivitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetActiveProjectActivitiesResult" type="tns:ArrayOfActivity" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGenericPhase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phaseName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phaseDescription" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddGenericPhaseResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateGenericPhase">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="newPhase" type="tns:Phase" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateGenericPhaseResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetProjectsUserHasRole">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectsUserHasRoleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectsUserHasRoleResult" type="tns:ArrayOfProject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectUserRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projectId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectUserRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectUserRolesResult" type="tns:ArrayOfProject_User_Role" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectPhaseRoles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projectId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectPhaseRolesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectPhaseRolesResult" type="tns:ArrayOfProject_Phase_Role" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetProjectByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjectByID" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjects" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:AddProject" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:AddProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProject" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddPhaseToProjectSoapIn">
+    <wsdl:part name="parameters" element="tns:AddPhaseToProject" />
+  </wsdl:message>
+  <wsdl:message name="AddPhaseToProjectSoapOut">
+    <wsdl:part name="parameters" element="tns:AddPhaseToProjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProjectPhaseSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProjectPhase" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProjectPhaseSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProjectPhaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:AddProjectRole" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:AddProjectRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProjectRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProjectRole" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProjectRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProjectRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjectRoles" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectPhasesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjectPhases" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectPhasesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectPhasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddRoleToPhaseSoapIn">
+    <wsdl:part name="parameters" element="tns:AddRoleToPhase" />
+  </wsdl:message>
+  <wsdl:message name="AddRoleToPhaseSoapOut">
+    <wsdl:part name="parameters" element="tns:AddRoleToPhaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGenericPhasesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGenericPhases" />
+  </wsdl:message>
+  <wsdl:message name="GetGenericPhasesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGenericPhasesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectPhaseRoleDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjectPhaseRoleData" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectPhaseRoleDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectPhaseRoleDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProjectPhaseRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProjectPhaseRole" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProjectPhaseRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProjectPhaseRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProjectPhaseRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteProjectPhaseRole" />
+  </wsdl:message>
+  <wsdl:message name="DeleteProjectPhaseRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteProjectPhaseRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeAssignedToRoleOnPhaseSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimeAssignedToRoleOnPhase" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeAssignedToRoleOnPhaseSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeAssignedToRoleOnPhaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeAssignedToPhaseSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimeAssignedToPhase" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeAssignedToPhaseSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeAssignedToPhaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectUsersOnRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjectUsersOnRoles" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectUsersOnRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectUsersOnRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectUserRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:AddProjectUserRole" />
+  </wsdl:message>
+  <wsdl:message name="AddProjectUserRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:AddProjectUserRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectActivitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjectActivities" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectActivitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveProjectActivitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetActiveProjectActivities" />
+  </wsdl:message>
+  <wsdl:message name="GetActiveProjectActivitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetActiveProjectActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddGenericPhaseSoapIn">
+    <wsdl:part name="parameters" element="tns:AddGenericPhase" />
+  </wsdl:message>
+  <wsdl:message name="AddGenericPhaseSoapOut">
+    <wsdl:part name="parameters" element="tns:AddGenericPhaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGenericPhaseSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateGenericPhase" />
+  </wsdl:message>
+  <wsdl:message name="UpdateGenericPhaseSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateGenericPhaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectsUserHasRoleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjectsUserHasRole" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectsUserHasRoleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectsUserHasRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectUserRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjectUserRoles" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectUserRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectUserRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectPhaseRolesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjectPhaseRoles" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectPhaseRolesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectPhaseRolesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ProjectSoap">
+    <wsdl:operation name="GetProjectByID">
+      <wsdl:input message="tns:GetProjectByIDSoapIn" />
+      <wsdl:output message="tns:GetProjectByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjects">
+      <wsdl:input message="tns:GetProjectsSoapIn" />
+      <wsdl:output message="tns:GetProjectsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProject">
+      <wsdl:input message="tns:AddProjectSoapIn" />
+      <wsdl:output message="tns:AddProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProject">
+      <wsdl:input message="tns:UpdateProjectSoapIn" />
+      <wsdl:output message="tns:UpdateProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddPhaseToProject">
+      <wsdl:input message="tns:AddPhaseToProjectSoapIn" />
+      <wsdl:output message="tns:AddPhaseToProjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectPhase">
+      <wsdl:input message="tns:UpdateProjectPhaseSoapIn" />
+      <wsdl:output message="tns:UpdateProjectPhaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProjectRole">
+      <wsdl:input message="tns:AddProjectRoleSoapIn" />
+      <wsdl:output message="tns:AddProjectRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectRole">
+      <wsdl:input message="tns:UpdateProjectRoleSoapIn" />
+      <wsdl:output message="tns:UpdateProjectRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectRoles">
+      <wsdl:input message="tns:GetProjectRolesSoapIn" />
+      <wsdl:output message="tns:GetProjectRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectPhases">
+      <wsdl:input message="tns:GetProjectPhasesSoapIn" />
+      <wsdl:output message="tns:GetProjectPhasesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddRoleToPhase">
+      <wsdl:input message="tns:AddRoleToPhaseSoapIn" />
+      <wsdl:output message="tns:AddRoleToPhaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGenericPhases">
+      <wsdl:input message="tns:GetGenericPhasesSoapIn" />
+      <wsdl:output message="tns:GetGenericPhasesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectPhaseRoleData">
+      <wsdl:input message="tns:GetProjectPhaseRoleDataSoapIn" />
+      <wsdl:output message="tns:GetProjectPhaseRoleDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectPhaseRole">
+      <wsdl:input message="tns:UpdateProjectPhaseRoleSoapIn" />
+      <wsdl:output message="tns:UpdateProjectPhaseRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProjectPhaseRole">
+      <wsdl:input message="tns:DeleteProjectPhaseRoleSoapIn" />
+      <wsdl:output message="tns:DeleteProjectPhaseRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeAssignedToRoleOnPhase">
+      <wsdl:input message="tns:GetTimeAssignedToRoleOnPhaseSoapIn" />
+      <wsdl:output message="tns:GetTimeAssignedToRoleOnPhaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeAssignedToPhase">
+      <wsdl:input message="tns:GetTimeAssignedToPhaseSoapIn" />
+      <wsdl:output message="tns:GetTimeAssignedToPhaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectUsersOnRoles">
+      <wsdl:input message="tns:GetProjectUsersOnRolesSoapIn" />
+      <wsdl:output message="tns:GetProjectUsersOnRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProjectUserRole">
+      <wsdl:input message="tns:AddProjectUserRoleSoapIn" />
+      <wsdl:output message="tns:AddProjectUserRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectActivities">
+      <wsdl:input message="tns:GetProjectActivitiesSoapIn" />
+      <wsdl:output message="tns:GetProjectActivitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveProjectActivities">
+      <wsdl:input message="tns:GetActiveProjectActivitiesSoapIn" />
+      <wsdl:output message="tns:GetActiveProjectActivitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddGenericPhase">
+      <wsdl:input message="tns:AddGenericPhaseSoapIn" />
+      <wsdl:output message="tns:AddGenericPhaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenericPhase">
+      <wsdl:input message="tns:UpdateGenericPhaseSoapIn" />
+      <wsdl:output message="tns:UpdateGenericPhaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectsUserHasRole">
+      <wsdl:input message="tns:GetProjectsUserHasRoleSoapIn" />
+      <wsdl:output message="tns:GetProjectsUserHasRoleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectUserRoles">
+      <wsdl:input message="tns:GetProjectUserRolesSoapIn" />
+      <wsdl:output message="tns:GetProjectUserRolesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectPhaseRoles">
+      <wsdl:input message="tns:GetProjectPhaseRolesSoapIn" />
+      <wsdl:output message="tns:GetProjectPhaseRolesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProjectSoap" type="tns:ProjectSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProjectByID">
+      <soap:operation soapAction="http://tempuri.org/GetProjectByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjects">
+      <soap:operation soapAction="http://tempuri.org/GetProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProject">
+      <soap:operation soapAction="http://tempuri.org/AddProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProject">
+      <soap:operation soapAction="http://tempuri.org/UpdateProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPhaseToProject">
+      <soap:operation soapAction="http://tempuri.org/AddPhaseToProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectPhase">
+      <soap:operation soapAction="http://tempuri.org/UpdateProjectPhase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProjectRole">
+      <soap:operation soapAction="http://tempuri.org/AddProjectRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectRole">
+      <soap:operation soapAction="http://tempuri.org/UpdateProjectRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectRoles">
+      <soap:operation soapAction="http://tempuri.org/GetProjectRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectPhases">
+      <soap:operation soapAction="http://tempuri.org/GetProjectPhases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRoleToPhase">
+      <soap:operation soapAction="http://tempuri.org/AddRoleToPhase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGenericPhases">
+      <soap:operation soapAction="http://tempuri.org/GetGenericPhases" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectPhaseRoleData">
+      <soap:operation soapAction="http://tempuri.org/GetProjectPhaseRoleData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectPhaseRole">
+      <soap:operation soapAction="http://tempuri.org/UpdateProjectPhaseRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProjectPhaseRole">
+      <soap:operation soapAction="http://tempuri.org/DeleteProjectPhaseRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeAssignedToRoleOnPhase">
+      <soap:operation soapAction="http://tempuri.org/GetTimeAssignedToRoleOnPhase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeAssignedToPhase">
+      <soap:operation soapAction="http://tempuri.org/GetTimeAssignedToPhase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectUsersOnRoles">
+      <soap:operation soapAction="http://tempuri.org/GetProjectUsersOnRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProjectUserRole">
+      <soap:operation soapAction="http://tempuri.org/AddProjectUserRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectActivities">
+      <soap:operation soapAction="http://tempuri.org/GetProjectActivities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveProjectActivities">
+      <soap:operation soapAction="http://tempuri.org/GetActiveProjectActivities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGenericPhase">
+      <soap:operation soapAction="http://tempuri.org/AddGenericPhase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenericPhase">
+      <soap:operation soapAction="http://tempuri.org/UpdateGenericPhase" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectsUserHasRole">
+      <soap:operation soapAction="http://tempuri.org/GetProjectsUserHasRole" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectUserRoles">
+      <soap:operation soapAction="http://tempuri.org/GetProjectUserRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectPhaseRoles">
+      <soap:operation soapAction="http://tempuri.org/GetProjectPhaseRoles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProjectSoap12" type="tns:ProjectSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetProjectByID">
+      <soap12:operation soapAction="http://tempuri.org/GetProjectByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjects">
+      <soap12:operation soapAction="http://tempuri.org/GetProjects" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProject">
+      <soap12:operation soapAction="http://tempuri.org/AddProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProject">
+      <soap12:operation soapAction="http://tempuri.org/UpdateProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddPhaseToProject">
+      <soap12:operation soapAction="http://tempuri.org/AddPhaseToProject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectPhase">
+      <soap12:operation soapAction="http://tempuri.org/UpdateProjectPhase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProjectRole">
+      <soap12:operation soapAction="http://tempuri.org/AddProjectRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectRole">
+      <soap12:operation soapAction="http://tempuri.org/UpdateProjectRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectRoles">
+      <soap12:operation soapAction="http://tempuri.org/GetProjectRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectPhases">
+      <soap12:operation soapAction="http://tempuri.org/GetProjectPhases" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddRoleToPhase">
+      <soap12:operation soapAction="http://tempuri.org/AddRoleToPhase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGenericPhases">
+      <soap12:operation soapAction="http://tempuri.org/GetGenericPhases" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectPhaseRoleData">
+      <soap12:operation soapAction="http://tempuri.org/GetProjectPhaseRoleData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectPhaseRole">
+      <soap12:operation soapAction="http://tempuri.org/UpdateProjectPhaseRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProjectPhaseRole">
+      <soap12:operation soapAction="http://tempuri.org/DeleteProjectPhaseRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeAssignedToRoleOnPhase">
+      <soap12:operation soapAction="http://tempuri.org/GetTimeAssignedToRoleOnPhase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeAssignedToPhase">
+      <soap12:operation soapAction="http://tempuri.org/GetTimeAssignedToPhase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectUsersOnRoles">
+      <soap12:operation soapAction="http://tempuri.org/GetProjectUsersOnRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProjectUserRole">
+      <soap12:operation soapAction="http://tempuri.org/AddProjectUserRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectActivities">
+      <soap12:operation soapAction="http://tempuri.org/GetProjectActivities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetActiveProjectActivities">
+      <soap12:operation soapAction="http://tempuri.org/GetActiveProjectActivities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddGenericPhase">
+      <soap12:operation soapAction="http://tempuri.org/AddGenericPhase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGenericPhase">
+      <soap12:operation soapAction="http://tempuri.org/UpdateGenericPhase" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectsUserHasRole">
+      <soap12:operation soapAction="http://tempuri.org/GetProjectsUserHasRole" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectUserRoles">
+      <soap12:operation soapAction="http://tempuri.org/GetProjectUserRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectPhaseRoles">
+      <soap12:operation soapAction="http://tempuri.org/GetProjectPhaseRoles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Project">
+    <wsdl:port name="ProjectSoap" binding="tns:ProjectSoap">
+      <soap:address location="http://cswebserve/TimeEntryV2WS_Live/Project.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ProjectSoap12" binding="tns:ProjectSoap12">
+      <soap12:address location="http://cswebserve/TimeEntryV2WS_Live/Project.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

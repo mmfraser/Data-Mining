@@ -1,0 +1,26 @@
+C:\Software Repository\Cooper Software\CS Time Entry\Time Entry v2_New\HolidayImportFrmsApp\HolidayImp\HolidayImp\bin\Debug\HolidayImp.exe
+C:\Software Repository\Cooper Software\CS Time Entry\Time Entry v2_New\HolidayImportFrmsApp\HolidayImp\HolidayImp\bin\Debug\HolidayImp.pdb
+C:\Software Repository\Cooper Software\CS Time Entry\Time Entry v2_New\HolidayImportFrmsApp\HolidayImp\HolidayImp\bin\Debug\HolidayImp.xml
+C:\Software Repository\Cooper Software\CS Time Entry\Time Entry v2_New\HolidayImportFrmsApp\HolidayImp\HolidayImp\bin\Debug\CooperSoftware.DataAccess.dll
+C:\Software Repository\Cooper Software\CS Time Entry\Time Entry v2_New\HolidayImportFrmsApp\HolidayImp\HolidayImp\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Software Repository\Cooper Software\CS Time Entry\Time Entry v2_New\HolidayImportFrmsApp\HolidayImp\HolidayImp\obj\x86\Debug\WindowsApplication1.Form1.resources
+C:\Software Repository\Cooper Software\CS Time Entry\Time Entry v2_New\HolidayImportFrmsApp\HolidayImp\HolidayImp\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Software Repository\Cooper Software\CS Time Entry\Time Entry v2_New\HolidayImportFrmsApp\HolidayImp\HolidayImp\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Software Repository\Cooper Software\CS Time Entry\Time Entry v2_New\HolidayImportFrmsApp\HolidayImp\HolidayImp\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Software Repository\Cooper Software\CS Time Entry\Time Entry v2_New\HolidayImportFrmsApp\HolidayImp\HolidayImp\obj\x86\Debug\HolidayImp.exe
+C:\Software Repository\Cooper Software\CS Time Entry\Time Entry v2_New\HolidayImportFrmsApp\HolidayImp\HolidayImp\obj\x86\Debug\HolidayImp.xml
+C:\Software Repository\Cooper Software\CS Time Entry\Time Entry v2_New\HolidayImportFrmsApp\HolidayImp\HolidayImp\obj\x86\Debug\HolidayImp.pdb
+C:\Software Repository\Cooper Software\CS Time Entry\Time Entry v2_New\HolidayImportFrmsApp\HolidayImp\HolidayImp\bin\Debug\HolidayImp.exe.config
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\HolidayImp\HolidayImp\bin\Debug\HolidayImp.exe.config
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\HolidayImp\HolidayImp\obj\x86\Debug\HolidayImp.exe
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\HolidayImp\HolidayImp\obj\x86\Debug\HolidayImp.xml
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\HolidayImp\HolidayImp\obj\x86\Debug\HolidayImp.pdb
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\HolidayImp\HolidayImp\bin\Debug\HolidayImp.exe
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\HolidayImp\HolidayImp\bin\Debug\HolidayImp.pdb
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\HolidayImp\HolidayImp\bin\Debug\HolidayImp.xml
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\HolidayImp\HolidayImp\bin\Debug\CooperSoftware.DataAccess.dll
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\HolidayImp\HolidayImp\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\HolidayImp\HolidayImp\obj\x86\Debug\WindowsApplication1.Form1.resources
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\HolidayImp\HolidayImp\obj\x86\Debug\WindowsApplication1.Resources.resources
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\HolidayImp\HolidayImp\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW1\App\HolidayImp\HolidayImp\obj\x86\Debug\GenerateResource.write.1.tlog

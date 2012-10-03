@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GetUserTimesheetEntries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserTimesheetEntriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserTimesheetEntriesResult" type="tns:ArrayOfTimesheet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTimesheet">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Timesheet" nillable="true" type="tns:Timesheet" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Timesheet">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TIMESHEET_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROJECT" type="tns:Project" />
+          <s:element minOccurs="1" maxOccurs="1" name="USER_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="USER" type="tns:User" />
+          <s:element minOccurs="1" maxOccurs="1" name="ACTIVITY_ID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ACTIVITY" type="tns:Activity" />
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_PHASE_ID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROJECT_PHASE" type="tns:Project_Phase" />
+          <s:element minOccurs="1" maxOccurs="1" name="NUMBER_OF_HOURS" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="TIMESHEET_DATE" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="DATE_ENTERED" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="DESCRIPTION" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CHARGEABLE" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="START_TIME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="END_TIME" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TASK_ID" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="TASK_NAME" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_USER_ROLE_ID" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Project">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_NUMBER" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROJECT_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CUSTOMER_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CUSTOMER_OBJECT" type="tns:Customer" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROJECT_DESCRIPTION" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="START_DATE" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="TARGET_COMPLETION_DATE" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ACTUAL_COMPLETION_DATE" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="ACTIVE" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="OutputValue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHASES" type="tns:ArrayOfProject_Phase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Customer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CUST_CODE" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CUSTOMER_NAME" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfProject_Phase">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Project_Phase" nillable="true" type="tns:Project_Phase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Project_Phase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_PHASE_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PROJECT_ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TARGET_HOURS_PP" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="TARGET_HOURS_LOE" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="START_TARGET" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="START_ACTUAL" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="END_TARGET" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="END_ACTUAL" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="PHASE_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHASE" type="tns:Phase" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Phase">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="PHASE_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHASE_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PHASE_DESCRIPTION" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="User">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="USER_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="USER_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="USER_EMAIL" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="SEND_NAG_EMAIL" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IS_ADMIN" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IS_PMO" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IS_ACTIVE" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PROJECT_PLAN_NAME" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Activity">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ACTIVITY_ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ACTIVITY_NAME" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ACTIVITY_DESCRIPTION" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ACTIVITY_ACTIVE" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTimesheetEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="entryId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimesheetEntryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimesheetEntryResult" type="tns:Timesheet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSumTimeLoggedToday">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetSumTimeLoggedTodayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetSumTimeLoggedTodayResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTimesheetEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timesheetId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTimesheetEntryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AddTimesheetEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="projectId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="userId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="activityId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="numberOfHours" type="s:decimal" />
+            <s:element minOccurs="1" maxOccurs="1" name="timesheetDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="dateEntered" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="chargeable" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="startTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endTime" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="phaseId" nillable="true" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="taskId" nillable="true" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTimesheetEntryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateTimesheetEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="oTimesheetEntry" type="tns:Timesheet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTimesheetEntryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTimesheetEntries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimesheetEntriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimesheetEntriesResult" type="tns:ArrayOfTimesheet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectTimesheetEntries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="startDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="endDate" type="s:dateTime" />
+            <s:element minOccurs="1" maxOccurs="1" name="projectId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProjectTimesheetEntriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProjectTimesheetEntriesResult" type="tns:ArrayOfTimesheet" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MarkEntryBillable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="timesheetId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="roleId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="isBillable" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MarkEntryBillableResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetUserTimesheetEntriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserTimesheetEntries" />
+  </wsdl:message>
+  <wsdl:message name="GetUserTimesheetEntriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserTimesheetEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimesheetEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimesheetEntry" />
+  </wsdl:message>
+  <wsdl:message name="GetTimesheetEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimesheetEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSumTimeLoggedTodaySoapIn">
+    <wsdl:part name="parameters" element="tns:GetSumTimeLoggedToday" />
+  </wsdl:message>
+  <wsdl:message name="GetSumTimeLoggedTodaySoapOut">
+    <wsdl:part name="parameters" element="tns:GetSumTimeLoggedTodayResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTimesheetEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteTimesheetEntry" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTimesheetEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteTimesheetEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTimesheetEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:AddTimesheetEntry" />
+  </wsdl:message>
+  <wsdl:message name="AddTimesheetEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:AddTimesheetEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimesheetEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTimesheetEntry" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTimesheetEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTimesheetEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTimesheetEntriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimesheetEntries" />
+  </wsdl:message>
+  <wsdl:message name="GetTimesheetEntriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimesheetEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectTimesheetEntriesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProjectTimesheetEntries" />
+  </wsdl:message>
+  <wsdl:message name="GetProjectTimesheetEntriesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProjectTimesheetEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="MarkEntryBillableSoapIn">
+    <wsdl:part name="parameters" element="tns:MarkEntryBillable" />
+  </wsdl:message>
+  <wsdl:message name="MarkEntryBillableSoapOut">
+    <wsdl:part name="parameters" element="tns:MarkEntryBillableResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TimesheetSoap">
+    <wsdl:operation name="GetUserTimesheetEntries">
+      <wsdl:input message="tns:GetUserTimesheetEntriesSoapIn" />
+      <wsdl:output message="tns:GetUserTimesheetEntriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimesheetEntry">
+      <wsdl:input message="tns:GetTimesheetEntrySoapIn" />
+      <wsdl:output message="tns:GetTimesheetEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSumTimeLoggedToday">
+      <wsdl:input message="tns:GetSumTimeLoggedTodaySoapIn" />
+      <wsdl:output message="tns:GetSumTimeLoggedTodaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTimesheetEntry">
+      <wsdl:input message="tns:DeleteTimesheetEntrySoapIn" />
+      <wsdl:output message="tns:DeleteTimesheetEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTimesheetEntry">
+      <wsdl:input message="tns:AddTimesheetEntrySoapIn" />
+      <wsdl:output message="tns:AddTimesheetEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimesheetEntry">
+      <wsdl:input message="tns:UpdateTimesheetEntrySoapIn" />
+      <wsdl:output message="tns:UpdateTimesheetEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimesheetEntries">
+      <wsdl:input message="tns:GetTimesheetEntriesSoapIn" />
+      <wsdl:output message="tns:GetTimesheetEntriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectTimesheetEntries">
+      <wsdl:input message="tns:GetProjectTimesheetEntriesSoapIn" />
+      <wsdl:output message="tns:GetProjectTimesheetEntriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkEntryBillable">
+      <wsdl:input message="tns:MarkEntryBillableSoapIn" />
+      <wsdl:output message="tns:MarkEntryBillableSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TimesheetSoap" type="tns:TimesheetSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserTimesheetEntries">
+      <soap:operation soapAction="http://tempuri.org/GetUserTimesheetEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimesheetEntry">
+      <soap:operation soapAction="http://tempuri.org/GetTimesheetEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSumTimeLoggedToday">
+      <soap:operation soapAction="http://tempuri.org/GetSumTimeLoggedToday" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTimesheetEntry">
+      <soap:operation soapAction="http://tempuri.org/DeleteTimesheetEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTimesheetEntry">
+      <soap:operation soapAction="http://tempuri.org/AddTimesheetEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimesheetEntry">
+      <soap:operation soapAction="http://tempuri.org/UpdateTimesheetEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimesheetEntries">
+      <soap:operation soapAction="http://tempuri.org/GetTimesheetEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectTimesheetEntries">
+      <soap:operation soapAction="http://tempuri.org/GetProjectTimesheetEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkEntryBillable">
+      <soap:operation soapAction="http://tempuri.org/MarkEntryBillable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TimesheetSoap12" type="tns:TimesheetSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUserTimesheetEntries">
+      <soap12:operation soapAction="http://tempuri.org/GetUserTimesheetEntries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimesheetEntry">
+      <soap12:operation soapAction="http://tempuri.org/GetTimesheetEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSumTimeLoggedToday">
+      <soap12:operation soapAction="http://tempuri.org/GetSumTimeLoggedToday" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTimesheetEntry">
+      <soap12:operation soapAction="http://tempuri.org/DeleteTimesheetEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTimesheetEntry">
+      <soap12:operation soapAction="http://tempuri.org/AddTimesheetEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTimesheetEntry">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTimesheetEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimesheetEntries">
+      <soap12:operation soapAction="http://tempuri.org/GetTimesheetEntries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjectTimesheetEntries">
+      <soap12:operation soapAction="http://tempuri.org/GetProjectTimesheetEntries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkEntryBillable">
+      <soap12:operation soapAction="http://tempuri.org/MarkEntryBillable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Timesheet">
+    <wsdl:port name="TimesheetSoap" binding="tns:TimesheetSoap">
+      <soap:address location="http://cswebserve/TimeEntryV2WS_Live/Timesheet.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TimesheetSoap12" binding="tns:TimesheetSoap12">
+      <soap12:address location="http://cswebserve/TimeEntryV2WS_Live/Timesheet.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
