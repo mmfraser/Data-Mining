@@ -14,6 +14,9 @@ Public Class Form1
 
     Private Sub OpenFileDialog1_FileOk(ByVal sender As Object, ByVal e As System.ComponentModel.CancelEventArgs) Handles OpenFileDialog1.FileOk
         Try
+
+            DataGridView1.Columns.Clear()
+
             Dim oDb As New CooperSoftware.DataAccess.Database(CooperSoftware.DataAccess.DatabasePlatform.Excel)
             oDb.Name = OpenFileDialog1.FileName
             oDb.ExcelIMEX = 1
@@ -144,20 +147,22 @@ Public Class Form1
 
     Private Sub btnCalcAccuracy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCalcAccuracy.Click
 
-        Dim selectedCols As New List(Of Integer)
+        'Dim selectedCols As New List(Of Integer)
 
-        For i = 0 To DataGridView1.SelectedCells.Count - 1
-            selectedCols.Add(DataGridView1.SelectedCells.Item(i).ColumnIndex)
-        Next
+        'For i = 0 To DataGridView1.SelectedCells.Count - 1
+        '    selectedCols.Add(DataGridView1.SelectedCells.Item(i).ColumnIndex)
+        'Next
 
-        If selectedCols.Count <> 2 Then
-            Throw New Exception("Must be only two columns selected")
-        End If
+        'If selectedCols.Count <> 2 Then
+        '    Throw New Exception("Must be only two columns selected")
+        'End If
 
         Dim accuracy As Integer = 0
+        For Each row As DataGridViewRow In DataGridView1.Rows
+            accuracy += CheckAccuracy(DataGridView1, selectedClassIndex, selectedNNIndex, row.Index)
+        Next
 
-        CheckAccuracy(DataGridView1, 8, 9, 1)
-
+        MsgBox(100 * accuracy / DataGridView1.Rows.Count)
     End Sub
 
 
@@ -166,7 +171,8 @@ Public Class Form1
         Dim nnVal As Double = CDec(data.Rows(currentRowNo).Cells(nnColumnNo).Value)
         Dim nnClass As Object = data.Rows(currentRowNo).Cells(classColumnNo).Value
 
-        Dim closestNNVal As Double
+        Dim test = (From x In data.Rows.Cast(Of DataGridViewRow)() Where x.Index <> currentRowNo Select dataClass = x.Cells(classColumnNo).Value, nn = CDbl(x.Cells(nnColumnNo).Value) Order By Math.Abs(nn - nnVal)).First
+
         Dim closestClass As Object = (From x In data.Rows.Cast(Of DataGridViewRow)() Where x.Index <> currentRowNo Select dataClass = x.Cells(classColumnNo).Value, nn = CDbl(x.Cells(nnColumnNo).Value) Order By Math.Abs(nn - nnVal)).First.dataClass
 
         If nnClass Is closestClass Then
@@ -203,6 +209,6 @@ Public Class Form1
         End If
 
         selectedNNIndex = selectedCols.First
-        lblNNField.Text = selectedClassIndex.ToString
+        lblNNField.Text = selectedNNIndex.ToString
     End Sub
 End Class
