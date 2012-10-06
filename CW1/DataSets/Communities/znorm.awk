@@ -32,7 +32,7 @@ END {
 
 ##### replace each value by std units
   for(r=1;r<=records;r++) {
-	printf("%d\n",r);    
+    
 for(f=1;f<numfields;f++) {
 	
       data[r,f] /= std[f];
