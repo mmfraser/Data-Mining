@@ -1,4 +1,4 @@
-BEGIN {records = 0; numfields = 128;}
+BEGIN {records = 0; numfields = 101;}
 {
   records++;
     for(i=1;i<=NF;i++) {data[records,i] = $i;}
@@ -19,6 +19,8 @@ END {
       data[r,f] -= mean[f];    #### leaving the class field intact
     }
   }
+
+
 ##### calculate stds
   for(f=1;f<numfields;f++) {
     for(r=1;r<=records;r++) {
@@ -27,9 +29,12 @@ END {
     std[f] /= records;
     std[f] = sqrt(std[f]);
   }
+
 ##### replace each value by std units
   for(r=1;r<=records;r++) {
-    for(f=1;f<numfields;f++) {
+	printf("%d\n",r);    
+for(f=1;f<numfields;f++) {
+	
       data[r,f] /= std[f];
     }
   }
