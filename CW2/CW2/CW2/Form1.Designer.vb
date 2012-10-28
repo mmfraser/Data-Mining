@@ -33,14 +33,19 @@ Partial Class Form1
         Me.lblNoBins = New System.Windows.Forms.Label()
         Me.btnRandomiseRows = New System.Windows.Forms.Button()
         Me.btnCalculateCorrelation = New System.Windows.Forms.Button()
+        Me.gvPearsonsR = New System.Windows.Forms.DataGridView()
         CType(Me.gvData, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gvPearsonsR, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gvData
         '
+        Me.gvData.AllowUserToAddRows = False
+        Me.gvData.AllowUserToDeleteRows = False
         Me.gvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.gvData.Location = New System.Drawing.Point(13, 42)
         Me.gvData.Name = "gvData"
+        Me.gvData.ReadOnly = True
         Me.gvData.Size = New System.Drawing.Size(781, 399)
         Me.gvData.TabIndex = 0
         '
@@ -126,11 +131,23 @@ Partial Class Form1
         Me.btnCalculateCorrelation.Text = "Calculate Correlation"
         Me.btnCalculateCorrelation.UseVisualStyleBackColor = True
         '
+        'gvPearsonsR
+        '
+        Me.gvPearsonsR.AllowUserToAddRows = False
+        Me.gvPearsonsR.AllowUserToDeleteRows = False
+        Me.gvPearsonsR.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.gvPearsonsR.Location = New System.Drawing.Point(12, 492)
+        Me.gvPearsonsR.Name = "gvPearsonsR"
+        Me.gvPearsonsR.ReadOnly = True
+        Me.gvPearsonsR.Size = New System.Drawing.Size(240, 150)
+        Me.gvPearsonsR.TabIndex = 10
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(806, 475)
+        Me.ClientSize = New System.Drawing.Size(806, 678)
+        Me.Controls.Add(Me.gvPearsonsR)
         Me.Controls.Add(Me.btnCalculateCorrelation)
         Me.Controls.Add(Me.btnRandomiseRows)
         Me.Controls.Add(Me.lblNoBins)
@@ -144,6 +161,7 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.Text = "Form1"
         CType(Me.gvData, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gvPearsonsR, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -159,5 +177,6 @@ Partial Class Form1
     Friend WithEvents lblNoBins As System.Windows.Forms.Label
     Friend WithEvents btnRandomiseRows As System.Windows.Forms.Button
     Friend WithEvents btnCalculateCorrelation As System.Windows.Forms.Button
+    Friend WithEvents gvPearsonsR As System.Windows.Forms.DataGridView
 
 End Class

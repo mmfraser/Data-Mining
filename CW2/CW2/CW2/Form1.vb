@@ -204,9 +204,9 @@
             If index > noInstances Then
                 Exit For
             End If
-
         Next
 
+        Dim correlationValues As New List(Of PearsonsRCorrelation)
 
         For Each col As DataColumn In data.Columns
             If col.ColumnName <> classColName Then
@@ -226,11 +226,24 @@
                 Next
 
                 ' Calculate and store Pearsons r
-                MsgBox(calcPearsonsR(nonClassFieldVals, classFieldVals))
+                correlationValues.Add(New PearsonsRCorrelation(col.ColumnName, col.Ordinal, calcPearsonsR(nonClassFieldVals, classFieldVals)))
             End If
         Next
 
+        gvPearsonsR.DataSource = correlationValues
 
 
+    End Sub
+End Class
+
+Public Class PearsonsRCorrelation
+    Property columnName As String
+    Property columnIndex As Integer
+    Property PearsonsRCorrelation As Double
+
+    Public Sub New(colName As String, colIndex As Integer, correlation As Double)
+        columnIndex = colIndex
+        columnName = colName
+        PearsonsRCorrelation = correlation
     End Sub
 End Class
