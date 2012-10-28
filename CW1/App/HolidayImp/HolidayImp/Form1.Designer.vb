@@ -35,6 +35,7 @@ Partial Class Form1
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblNNField = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.txtNoNeighbours = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -63,11 +64,11 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(13, 413)
+        Me.Label1.Location = New System.Drawing.Point(470, 405)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(81, 13)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Label1"
+        Me.Label1.Text = "No Neighbours:"
         '
         'Button1
         '
@@ -148,11 +149,20 @@ Partial Class Form1
         Me.Button2.Text = "Set NN Field"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'txtNoNeighbours
+        '
+        Me.txtNoNeighbours.Location = New System.Drawing.Point(557, 402)
+        Me.txtNoNeighbours.Name = "txtNoNeighbours"
+        Me.txtNoNeighbours.Size = New System.Drawing.Size(100, 20)
+        Me.txtNoNeighbours.TabIndex = 14
+        Me.txtNoNeighbours.Text = "1"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1002, 438)
+        Me.Controls.Add(Me.txtNoNeighbours)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.lblNNField)
         Me.Controls.Add(Me.Label4)
@@ -185,5 +195,6 @@ Partial Class Form1
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents lblNNField As System.Windows.Forms.Label
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents txtNoNeighbours As System.Windows.Forms.TextBox
 
 End Class

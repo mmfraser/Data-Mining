@@ -67,16 +67,19 @@ Public Class Form1
     End Sub
 
     Public Sub MinMaxOnGridColumn(ByVal grid As DataGridView, ByVal column As Integer)
-        Dim minVal As Double
-        Dim maxVal As Double = 0
+        Dim minVal As Double = Nothing
+        Dim maxVal As Double
 
         ' get the min and max value
         For Each row As DataGridViewRow In grid.Rows
             If IsNumeric(row.Cells(column).Value) Then
                 Dim val = CDbl(row.Cells(column).Value)
-                If minVal > val Then
+                If minVal = Nothing Then
+                    minVal = val
+                ElseIf minVal > val Then
                     minVal = val
                 End If
+               
 
                 If maxVal < val Then
                     maxVal = val
@@ -120,7 +123,8 @@ Public Class Form1
         Try
             If a.Length = b.Length Then
                 For index = 0 To a.Length - 1
-                    sumDistance += (a(index) - b(index)) ^ 2
+
+                    sumDistance += Math.Pow((a(index) - b(index)), 2)
                 Next
             Else
                 Throw New Exception("Arrays a and b require the same number of elements")
@@ -145,6 +149,13 @@ Public Class Form1
 
     End Sub
 
+
+    Private Sub ZNormalOnColumn(ByVal grid As DataGridView, ByVal columnNo As Integer)
+
+    End Sub
+
+
+
     Private Sub btnCalcAccuracy_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCalcAccuracy.Click
 
         'Dim selectedCols As New List(Of Integer)
@@ -159,23 +170,52 @@ Public Class Form1
 
         Dim accuracy As Integer = 0
         For Each row As DataGridViewRow In DataGridView1.Rows
-            accuracy += CheckAccuracy(DataGridView1, selectedClassIndex, selectedNNIndex, row.Index)
+            accuracy += CheckAccuracy(DataGridView1, selectedClassIndex, selectedNNIndex, row.Index, CInt(txtNoNeighbours.Text))
         Next
 
         MsgBox(100 * accuracy / DataGridView1.Rows.Count)
     End Sub
 
 
-    Public Function CheckAccuracy(ByVal data As DataGridView, ByVal classColumnNo As Integer, ByVal nnColumnNo As Integer, ByVal currentRowNo As Integer) As Integer
+    Public Function CheckAccuracy(ByVal data As DataGridView, ByVal classColumnNo As Integer, ByVal nnColumnNo As Integer, ByVal currentRowNo As Integer, Optional ByVal noNeighbours As Integer = 1) As Integer
+
+        If noNeighbours Mod 2 = 0 Then
+            Throw New ApplicationException("No Neighbours must be an odd number >= 1.")
+        End If
 
         Dim nnVal As Double = CDec(data.Rows(currentRowNo).Cells(nnColumnNo).Value)
         Dim nnClass As Object = data.Rows(currentRowNo).Cells(classColumnNo).Value
 
-        Dim test = (From x In data.Rows.Cast(Of DataGridViewRow)() Where x.Index <> currentRowNo Select dataClass = x.Cells(classColumnNo).Value, nn = CDbl(x.Cells(nnColumnNo).Value) Order By Math.Abs(nn - nnVal)).First
+        Dim test = (From x In data.Rows.Cast(Of DataGridViewRow)() Where x.Index <> currentRowNo Select dataClass = x.Cells(classColumnNo).Value, nn = CDbl(x.Cells(nnColumnNo).Value) Order By Math.Abs(nn - nnVal) Take noNeighbours).ToList
 
-        Dim closestClass As Object = (From x In data.Rows.Cast(Of DataGridViewRow)() Where x.Index <> currentRowNo Select dataClass = x.Cells(classColumnNo).Value, nn = CDbl(x.Cells(nnColumnNo).Value) Order By Math.Abs(nn - nnVal)).First.dataClass
+        'Dim closestClass As Object = (From x In data.Rows.Cast(Of DataGridViewRow)() Where x.Index <> currentRowNo Select dataClass = x.Cells(classColumnNo).Value, nn = CDbl(x.Cells(nnColumnNo).Value) Order By Math.Abs(nn - nnVal)).First.dataClass
 
-        If nnClass Is closestClass Then
+        Dim classList As New Dictionary(Of Object, Integer)
+
+        For Each item In test
+            Dim count = 0
+            If classList.ContainsKey(item.dataClass) Then
+                count = classList(item.dataClass)
+            End If
+
+            classList.Remove(item.dataClass)
+            classList.Add(item.dataClass, count + 1)
+        Next
+
+        Dim maxClass As Object = Nothing
+        Dim counter As Integer = 0
+
+        For Each item In classList
+            If maxClass Is Nothing Then
+                maxClass = item.Key
+                counter = item.Value
+            ElseIf item.Value > counter Then
+                maxClass = item.Key
+                counter = item.Value
+            End If
+        Next
+
+        If nnClass.ToString = maxClass.ToString Then
             Return 1
         Else
             Return 0
