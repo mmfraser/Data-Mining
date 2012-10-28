@@ -1,0 +1,12 @@
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW2\CW2\CW2\bin\Debug\CW2.exe.config
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW2\CW2\CW2\bin\Debug\CW2.exe
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW2\CW2\CW2\bin\Debug\CW2.pdb
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW2\CW2\CW2\bin\Debug\CW2.xml
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW2\CW2\CW2\bin\Debug\CooperSoftware.DataAccess.dll
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW2\CW2\CW2\obj\Debug\CW2.vbprojResolveAssemblyReference.cache
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW2\CW2\CW2\obj\Debug\WindowsApplication1.Form1.resources
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW2\CW2\CW2\obj\Debug\WindowsApplication1.Resources.resources
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW2\CW2\CW2\obj\Debug\CW2.vbproj.GenerateResource.Cache
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW2\CW2\CW2\obj\Debug\CW2.exe
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW2\CW2\CW2\obj\Debug\CW2.xml
+C:\Users\Marc.COOPERSOFTWARE\Dropbox\Data Mining and Machine Learning\CW\CW2\CW2\CW2\obj\Debug\CW2.pdb
