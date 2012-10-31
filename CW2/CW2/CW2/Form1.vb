@@ -42,15 +42,9 @@
 
      
         Dim noBins As Integer = CInt(InputBox("Please enter the number of bins"))
-
         gvData.Columns.Add("Bin", "Bin")
-
         Dim minValue As Double = (From row As DataGridViewRow In gvData.Rows Select CDbl(row.Cells(classField).Value)).Min
-
         Dim maxValue As Double = (From row As DataGridViewRow In gvData.Rows Select CDbl(row.Cells(classField).Value)).Max
-
-   
-
 
         Dim interval As Double = (maxValue - minValue) / noBins
 
@@ -62,9 +56,9 @@
 
                 If row.Cells("Bin").Value Is Nothing Then
                     If classValue > ((bin - 1) * interval) AndAlso classValue <= (bin * interval) Then
-                        row.Cells("Bin").Value = bin
+                        row.Cells("Bin").Value = (bin - 1)
                     ElseIf classValue = 0 Then
-                        row.Cells("Bin").Value = 1
+                        row.Cells("Bin").Value = 0
                     End If
                 End If
 
@@ -116,7 +110,6 @@
 
         ' gvData.Columns.Clear()
         gvData.DataSource = randomDataTable
-        MsgBox("here")
 
     End Sub
 
@@ -195,6 +188,8 @@
         Dim pctOfInstances As Integer = CInt(InputBox("Enter the number of instances (%) to account for"))
         Dim noInstances As Integer = data.Rows.Count * (pctOfInstances / 100)
 
+        MsgBox("No of Instances: " & noInstances)
+
         ' Generate the class field array
         Dim index As Integer = 0
         Dim classFieldVals(noInstances) As Double
@@ -207,7 +202,6 @@
         Next
 
         Dim correlationValues As New List(Of PearsonsRCorrelation)
-
         For Each col As DataColumn In data.Columns
             If col.ColumnName <> classColName Then
                 ' use this column.
@@ -231,6 +225,7 @@
         Next
 
         gvPearsonsR.DataSource = correlationValues
+
 
 
     End Sub
