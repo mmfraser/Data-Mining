@@ -103,7 +103,6 @@
 
         For index = 0 To randomList.Count - 1
             randomDataTable.ImportRow(randomList(index))
-            index += 1
         Next
 
 
