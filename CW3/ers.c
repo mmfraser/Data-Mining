@@ -206,7 +206,7 @@ int evolve (void)
 
   bestinpop = getbest();
 
-  //print_rule(&population[bestinpop]);  // commented this out
+  print_rule(&population[bestinpop]);
 
   test_evaluate(&population[bestinpop]);
 }
@@ -291,12 +291,12 @@ int print_rule(RULESET *r)
 
   printf("\n");
 
-  for(i=0;i<rulesperclass*nclasses;i++)
-    {
-      for(j=0;j<intervalsperrule;j++)
-	printf(" %d-[%g  %g] ", r->rules[i].intervals[j].field,r->rules[i].intervals[j].low,r->rules[i].intervals[j].high);
-      printf("-> %d\n", r->rules[i].class);
-    }
+  // for(i=0;i<rulesperclass*nclasses;i++)
+    // {
+      // for(j=0;j<intervalsperrule;j++)
+	// printf(" %d-[%g  %g] ", r->rules[i].intervals[j].field,r->rules[i].intervals[j].low,r->rules[i].intervals[j].high);
+      // printf("-> %d\n", r->rules[i].class);
+    // }
   printf("ACCURACY on training set %g\%\n\n", 100.0* r->acc);
 }
 
