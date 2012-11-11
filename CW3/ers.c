@@ -42,7 +42,10 @@ typedef struct dataset {
   ROW rows[MAXROWS];
 } DATASET;
 
+
 DATASET train_data, test_data;
+
+
 
 typedef struct interval {
 
@@ -68,7 +71,9 @@ RULE rules[MAXRULES];
 
 } RULESET;
 
+
 RULESET population[MAXPOP+1];
+
 
 int main(int argc,char **argv){
 
@@ -81,9 +86,8 @@ int main(int argc,char **argv){
   trainfile = fopen(argv[5],"r");
   testfile = fopen(argv[6],"r");
 
-  intervalsperrule = atoi(argv[7]); // Vary this
-  rulesperclass = atoi(argv[8]); // Vary this
-  
+  intervalsperrule = atoi(argv[7]);
+  rulesperclass = atoi(argv[8]);
   iterations = atoi(argv[9]);
 
   randomize();
@@ -291,12 +295,12 @@ int print_rule(RULESET *r)
 
   printf("\n");
 
-  // for(i=0;i<rulesperclass*nclasses;i++)
-    // {
-      // for(j=0;j<intervalsperrule;j++)
-	// printf(" %d-[%g  %g] ", r->rules[i].intervals[j].field,r->rules[i].intervals[j].low,r->rules[i].intervals[j].high);
-      // printf("-> %d\n", r->rules[i].class);
-    // }
+  for(i=0;i<rulesperclass*nclasses;i++)
+    {
+      for(j=0;j<intervalsperrule;j++)
+	printf(" %d-[%g  %g] ", r->rules[i].intervals[j].field,r->rules[i].intervals[j].low,r->rules[i].intervals[j].high);
+      printf("-> %d\n", r->rules[i].class);
+    }
   printf("ACCURACY on training set %g\%\n\n", 100.0* r->acc);
 }
 
