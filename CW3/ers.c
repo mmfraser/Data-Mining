@@ -42,10 +42,7 @@ typedef struct dataset {
   ROW rows[MAXROWS];
 } DATASET;
 
-
 DATASET train_data, test_data;
-
-
 
 typedef struct interval {
 
@@ -71,9 +68,7 @@ RULE rules[MAXRULES];
 
 } RULESET;
 
-
 RULESET population[MAXPOP+1];
-
 
 int main(int argc,char **argv){
 
@@ -86,8 +81,9 @@ int main(int argc,char **argv){
   trainfile = fopen(argv[5],"r");
   testfile = fopen(argv[6],"r");
 
-  intervalsperrule = atoi(argv[7]);
-  rulesperclass = atoi(argv[8]);
+  intervalsperrule = atoi(argv[7]); // Vary this
+  rulesperclass = atoi(argv[8]); // Vary this
+  
   iterations = atoi(argv[9]);
 
   randomize();
@@ -210,7 +206,7 @@ int evolve (void)
 
   bestinpop = getbest();
 
-  print_rule(&population[bestinpop]);
+  //print_rule(&population[bestinpop]);  // commented this out
 
   test_evaluate(&population[bestinpop]);
 }
