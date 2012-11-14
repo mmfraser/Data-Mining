@@ -1,0 +1,17 @@
+FPR = 1 10 20 40 60 
+RPC = 1 10 40
+
+//FPR = 40 
+//RPC = 1 10 40
+all:
+	gcc ers.c -o ers -lm
+
+workStep3:
+	$(foreach var, $(FPR), $(foreach var1, $(RPC), ./ers 65 100 5120 10 optraining.txt optesting.txt $(var) $(var1) 10000 > Results/Run1f$(var)r$(var1).txt;))
+
+workStep4:
+	$(foreach var, $(FPR), $(foreach var1, $(RPC), ./ers 65 999 4221 10 Step4/optraining.txt Step4/optesting.txt $(var) $(var1) 10000 > Step4/Results/Run1f$(var)r$(var1).txt;))
+
+workStep5:
+	$(foreach var, $(FPR), $(foreach var1, $(RPC), ./ers 65 999 4221 10 Step5/optraining.txt Step5/optesting.txt $(var) $(var1) 10000 > Step5/Results/Run1f$(var)r$(var1).txt;))
+

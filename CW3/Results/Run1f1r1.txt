@@ -1,0 +1,119 @@
+Intervals per Rule = 1
+Rules per class = 1
+Iterations = 10000
+Training File = ˆ$­û
+Test File = ˆ$­û
+best on training set at iteration 0:  0%
+best on training set at iteration 100:  0%
+best on training set at iteration 200:  0%
+best on training set at iteration 300:  1%
+best on training set at iteration 400:  1%
+best on training set at iteration 500:  1%
+best on training set at iteration 600:  1%
+best on training set at iteration 700:  1%
+best on training set at iteration 800:  1%
+best on training set at iteration 900:  1%
+best on training set at iteration 1000:  1%
+best on training set at iteration 1100:  1%
+best on training set at iteration 1200:  1%
+best on training set at iteration 1300:  1%
+best on training set at iteration 1400:  1%
+best on training set at iteration 1500:  1%
+best on training set at iteration 1600:  1%
+best on training set at iteration 1700:  1%
+best on training set at iteration 1800:  1%
+best on training set at iteration 1900:  1%
+best on training set at iteration 2000:  1%
+best on training set at iteration 2100:  1%
+best on training set at iteration 2200:  1%
+best on training set at iteration 2300:  1%
+best on training set at iteration 2400:  1%
+best on training set at iteration 2500:  1%
+best on training set at iteration 2600:  1%
+best on training set at iteration 2700:  1%
+best on training set at iteration 2800:  1%
+best on training set at iteration 2900:  1%
+best on training set at iteration 3000:  1%
+best on training set at iteration 3100:  1%
+best on training set at iteration 3200:  1%
+best on training set at iteration 3300:  1%
+best on training set at iteration 3400:  1%
+best on training set at iteration 3500:  1%
+best on training set at iteration 3600:  1%
+best on training set at iteration 3700:  1%
+best on training set at iteration 3800:  1%
+best on training set at iteration 3900:  1%
+best on training set at iteration 4000:  1%
+best on training set at iteration 4100:  1%
+best on training set at iteration 4200:  1%
+best on training set at iteration 4300:  1%
+best on training set at iteration 4400:  1%
+best on training set at iteration 4500:  1%
+best on training set at iteration 4600:  1%
+best on training set at iteration 4700:  1%
+best on training set at iteration 4800:  1%
+best on training set at iteration 4900:  1%
+best on training set at iteration 5000:  1%
+best on training set at iteration 5100:  1%
+best on training set at iteration 5200:  1%
+best on training set at iteration 5300:  1%
+best on training set at iteration 5400:  1%
+best on training set at iteration 5500:  1%
+best on training set at iteration 5600:  1%
+best on training set at iteration 5700:  1%
+best on training set at iteration 5800:  1%
+best on training set at iteration 5900:  1%
+best on training set at iteration 6000:  1%
+best on training set at iteration 6100:  1%
+best on training set at iteration 6200:  1%
+best on training set at iteration 6300:  1%
+best on training set at iteration 6400:  1%
+best on training set at iteration 6500:  1%
+best on training set at iteration 6600:  1%
+best on training set at iteration 6700:  1%
+best on training set at iteration 6800:  1%
+best on training set at iteration 6900:  1%
+best on training set at iteration 7000:  1%
+best on training set at iteration 7100:  1%
+best on training set at iteration 7200:  1%
+best on training set at iteration 7300:  1%
+best on training set at iteration 7400:  1%
+best on training set at iteration 7500:  1%
+best on training set at iteration 7600:  1%
+best on training set at iteration 7700:  1%
+best on training set at iteration 7800:  1%
+best on training set at iteration 7900:  1%
+best on training set at iteration 8000:  1%
+best on training set at iteration 8100:  1%
+best on training set at iteration 8200:  1%
+best on training set at iteration 8300:  1%
+best on training set at iteration 8400:  1%
+best on training set at iteration 8500:  1%
+best on training set at iteration 8600:  1%
+best on training set at iteration 8700:  1%
+best on training set at iteration 8800:  1%
+best on training set at iteration 8900:  1%
+best on training set at iteration 9000:  1%
+best on training set at iteration 9100:  1%
+best on training set at iteration 9200:  1%
+best on training set at iteration 9300:  1%
+best on training set at iteration 9400:  1%
+best on training set at iteration 9500:  1%
+best on training set at iteration 9600:  1%
+best on training set at iteration 9700:  1%
+best on training set at iteration 9800:  1%
+best on training set at iteration 9900:  1%
+
+ 30-[4  12] -> 0
+ 29-[2  16] -> 1
+ 16-[-0  2] -> 2
+ 43-[-0  10] -> 3
+ 35-[3  10] -> 4
+ 35-[-0  11] -> 5
+ 51-[4  11] -> 6
+ 58-[2  14] -> 7
+ 57-[-0  1] -> 8
+ 19-[9  16] -> 9
+ACCURACY on training set 1%
+
+TEST ACCURACY 0.195312%

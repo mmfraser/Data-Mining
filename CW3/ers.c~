@@ -90,12 +90,6 @@ int main(int argc,char **argv){
   rulesperclass = atoi(argv[8]);
   iterations = atoi(argv[9]);
 
-  printf("Intervals per Rule = %d\n", intervalsperrule);
-  printf("Rules per class = %d\n", rulesperclass);
-  printf("Iterations = %d\n", iterations);
-printf("Training File = %s\n", trainfile);
-printf("Test File = %s\n", testfile);
-
   randomize();
 
   read_data(trainfile, nrows_train, nfields, &train_data);

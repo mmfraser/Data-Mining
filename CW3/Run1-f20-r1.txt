@@ -1,0 +1,114 @@
+best on training set at iteration 0:  16%
+best on training set at iteration 100:  18%
+best on training set at iteration 200:  18%
+best on training set at iteration 300:  18%
+best on training set at iteration 400:  19%
+best on training set at iteration 500:  22%
+best on training set at iteration 600:  22%
+best on training set at iteration 700:  22%
+best on training set at iteration 800:  23%
+best on training set at iteration 900:  23%
+best on training set at iteration 1000:  23%
+best on training set at iteration 1100:  23%
+best on training set at iteration 1200:  23%
+best on training set at iteration 1300:  23%
+best on training set at iteration 1400:  23%
+best on training set at iteration 1500:  23%
+best on training set at iteration 1600:  23%
+best on training set at iteration 1700:  23%
+best on training set at iteration 1800:  23%
+best on training set at iteration 1900:  23%
+best on training set at iteration 2000:  23%
+best on training set at iteration 2100:  23%
+best on training set at iteration 2200:  23%
+best on training set at iteration 2300:  23%
+best on training set at iteration 2400:  23%
+best on training set at iteration 2500:  23%
+best on training set at iteration 2600:  23%
+best on training set at iteration 2700:  23%
+best on training set at iteration 2800:  23%
+best on training set at iteration 2900:  23%
+best on training set at iteration 3000:  23%
+best on training set at iteration 3100:  23%
+best on training set at iteration 3200:  23%
+best on training set at iteration 3300:  23%
+best on training set at iteration 3400:  23%
+best on training set at iteration 3500:  23%
+best on training set at iteration 3600:  23%
+best on training set at iteration 3700:  23%
+best on training set at iteration 3800:  23%
+best on training set at iteration 3900:  23%
+best on training set at iteration 4000:  23%
+best on training set at iteration 4100:  23%
+best on training set at iteration 4200:  23%
+best on training set at iteration 4300:  23%
+best on training set at iteration 4400:  23%
+best on training set at iteration 4500:  23%
+best on training set at iteration 4600:  23%
+best on training set at iteration 4700:  23%
+best on training set at iteration 4800:  23%
+best on training set at iteration 4900:  23%
+best on training set at iteration 5000:  23%
+best on training set at iteration 5100:  23%
+best on training set at iteration 5200:  23%
+best on training set at iteration 5300:  23%
+best on training set at iteration 5400:  23%
+best on training set at iteration 5500:  23%
+best on training set at iteration 5600:  23%
+best on training set at iteration 5700:  23%
+best on training set at iteration 5800:  23%
+best on training set at iteration 5900:  23%
+best on training set at iteration 6000:  23%
+best on training set at iteration 6100:  23%
+best on training set at iteration 6200:  23%
+best on training set at iteration 6300:  23%
+best on training set at iteration 6400:  23%
+best on training set at iteration 6500:  23%
+best on training set at iteration 6600:  23%
+best on training set at iteration 6700:  23%
+best on training set at iteration 6800:  23%
+best on training set at iteration 6900:  23%
+best on training set at iteration 7000:  23%
+best on training set at iteration 7100:  23%
+best on training set at iteration 7200:  23%
+best on training set at iteration 7300:  23%
+best on training set at iteration 7400:  23%
+best on training set at iteration 7500:  23%
+best on training set at iteration 7600:  23%
+best on training set at iteration 7700:  23%
+best on training set at iteration 7800:  23%
+best on training set at iteration 7900:  23%
+best on training set at iteration 8000:  23%
+best on training set at iteration 8100:  23%
+best on training set at iteration 8200:  23%
+best on training set at iteration 8300:  23%
+best on training set at iteration 8400:  23%
+best on training set at iteration 8500:  23%
+best on training set at iteration 8600:  23%
+best on training set at iteration 8700:  23%
+best on training set at iteration 8800:  23%
+best on training set at iteration 8900:  23%
+best on training set at iteration 9000:  23%
+best on training set at iteration 9100:  23%
+best on training set at iteration 9200:  23%
+best on training set at iteration 9300:  23%
+best on training set at iteration 9400:  23%
+best on training set at iteration 9500:  23%
+best on training set at iteration 9600:  23%
+best on training set at iteration 9700:  23%
+best on training set at iteration 9800:  23%
+best on training set at iteration 9900:  23%
+
+ 13-[4  14]  10-[2  16]  11-[4  16]  52-[14  16]  19-[3  14]  39-[-0  3]  5-[1  9]  18-[7  16]  10-[5  16]  4-[2  16]  45-[13  16]  50-[7  16]  25-[6  10]  39-[-0  13]  53-[1  13]  29-[1  12]  35-[-0  13]  43-[-0  6]  4-[8  12]  32-[-0  7] -> 0
+ 4-[3  16]  23-[-0  12]  48-[-0  13]  52-[15  16]  2-[-0  3]  28-[10  16]  60-[7  16]  24-[-0  16]  8-[-0  7]  21-[2  15]  56-[-0  2]  21-[5  16]  31-[-0  2]  37-[2  13]  44-[3  16]  52-[6  16]  16-[-0  16]  22-[-0  16]  31-[-0  12]  8-[-0  2] -> 1
+ 38-[-0  13]  26-[0  4]  8-[-0  1]  55-[-0  14]  14-[-0  5]  3-[13  15]  31-[-0  16]  4-[3  9]  2-[1  16]  57-[1  15]  29-[-0  13]  29-[-0  1]  54-[2  14]  35-[1  16]  39-[-0  2]  17-[6  16]  27-[1  13]  12-[5  16]  58-[11  16]  42-[2  8] -> 2
+ 22-[-0  11]  12-[3  12]  58-[1  15]  17-[0  12]  1-[-0  6]  11-[5  16]  12-[9  13]  4-[4  15]  5-[3  12]  50-[1  8]  44-[4  9]  57-[-0  15]  35-[10  16]  22-[-0  13]  35-[5  16]  23-[-0  12]  49-[-0  2]  29-[1  7]  50-[1  5]  45-[15  16] -> 3
+ 52-[2  16]  38-[1  9]  50-[-0  16]  13-[3  12]  40-[-0  14]  19-[8  14]  30-[11  16]  8-[-0  1]  31-[-0  16]  14-[8  15]  51-[-0  8]  2-[-0  9]  27-[3  15]  18-[5  16]  41-[-0  14]  26-[15  16]  34-[5  15]  31-[-0  1]  58-[-0  1]  5-[5  11] -> 4
+ 34-[1  7]  22-[-0  3]  41-[-0  6]  22-[-0  4]  42-[-0  16]  27-[13  16]  18-[7  16]  52-[10  16]  48-[-0  13]  7-[-0  2]  12-[10  16]  38-[-0  9]  54-[-0  1]  16-[-0  3]  60-[6  12]  50-[2  15]  47-[-0  5]  48-[-0  11]  30-[-0  12]  18-[5  16] -> 5
+ 1-[-0  12]  56-[-0  2]  21-[-0  5]  15-[-0  3]  59-[6  16]  6-[-0  15]  57-[-0  11]  55-[-0  4]  7-[-0  16]  35-[6  16]  32-[-0  11]  20-[-0  13]  5-[-0  5]  12-[3  12]  44-[-0  10]  56-[-0  2]  60-[13  15]  36-[1  16]  5-[-0  14]  12-[2  16] -> 6
+ 46-[-0  1]  21-[5  16]  30-[1  9]  42-[2  16]  40-[-0  7]  23-[-0  9]  4-[11  16]  21-[11  16]  21-[9  16]  12-[9  16]  17-[-0  15]  55-[-0  12]  53-[-0  2]  36-[5  16]  63-[-0  1]  56-[-0  1]  49-[-0  10]  62-[-0  13]  61-[-0  10]  7-[-0  14] -> 7
+ 19-[0  10]  18-[8  16]  30-[-0  7]  18-[7  13]  38-[1  14]  32-[-0  16]  34-[10  16]  4-[2  15]  59-[9  16]  9-[1  12]  10-[4  16]  12-[6  14]  10-[12  16]  62-[-0  13]  14-[-0  2]  24-[-0  15]  12-[6  8]  62-[-0  2]  15-[-0  9]  37-[5  12] -> 8
+ 62-[-0  10]  60-[7  15]  15-[-0  2]  19-[1  4]  20-[0  2]  32-[-0  14]  35-[2  16]  59-[3  15]  55-[-0  16]  37-[5  16]  20-[0  13]  18-[11  16]  35-[8  13]  57-[-0  15]  47-[-0  9]  51-[3  15]  3-[7  16]  7-[-0  3]  17-[4  11]  5-[5  15] -> 9
+ACCURACY on training set 23%
+
+TEST ACCURACY 4.27734%

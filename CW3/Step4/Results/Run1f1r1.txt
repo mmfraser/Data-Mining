@@ -1,0 +1,119 @@
+Intervals per Rule = 1
+Rules per class = 1
+Iterations = 10000
+Training File = ˆ$­û
+Test File = ˆ$­û
+best on training set at iteration 0:  9.80981%
+best on training set at iteration 100:  9.80981%
+best on training set at iteration 200:  9.80981%
+best on training set at iteration 300:  9.80981%
+best on training set at iteration 400:  9.80981%
+best on training set at iteration 500:  10.8108%
+best on training set at iteration 600:  12.3123%
+best on training set at iteration 700:  13.5135%
+best on training set at iteration 800:  13.7137%
+best on training set at iteration 900:  14.2142%
+best on training set at iteration 1000:  17.7177%
+best on training set at iteration 1100:  17.7177%
+best on training set at iteration 1200:  17.7177%
+best on training set at iteration 1300:  18.6186%
+best on training set at iteration 1400:  18.6186%
+best on training set at iteration 1500:  18.6186%
+best on training set at iteration 1600:  18.6186%
+best on training set at iteration 1700:  18.6186%
+best on training set at iteration 1800:  20.6206%
+best on training set at iteration 1900:  20.6206%
+best on training set at iteration 2000:  20.6206%
+best on training set at iteration 2100:  20.6206%
+best on training set at iteration 2200:  20.6206%
+best on training set at iteration 2300:  20.6206%
+best on training set at iteration 2400:  20.6206%
+best on training set at iteration 2500:  20.6206%
+best on training set at iteration 2600:  22.4224%
+best on training set at iteration 2700:  22.4224%
+best on training set at iteration 2800:  22.4224%
+best on training set at iteration 2900:  22.4224%
+best on training set at iteration 3000:  22.4224%
+best on training set at iteration 3100:  22.5225%
+best on training set at iteration 3200:  22.5225%
+best on training set at iteration 3300:  22.9229%
+best on training set at iteration 3400:  22.9229%
+best on training set at iteration 3500:  24.024%
+best on training set at iteration 3600:  24.1241%
+best on training set at iteration 3700:  24.1241%
+best on training set at iteration 3800:  24.1241%
+best on training set at iteration 3900:  24.1241%
+best on training set at iteration 4000:  24.1241%
+best on training set at iteration 4100:  24.1241%
+best on training set at iteration 4200:  24.1241%
+best on training set at iteration 4300:  24.3243%
+best on training set at iteration 4400:  24.3243%
+best on training set at iteration 4500:  24.5245%
+best on training set at iteration 4600:  24.5245%
+best on training set at iteration 4700:  24.5245%
+best on training set at iteration 4800:  24.9249%
+best on training set at iteration 4900:  24.9249%
+best on training set at iteration 5000:  24.9249%
+best on training set at iteration 5100:  24.9249%
+best on training set at iteration 5200:  24.9249%
+best on training set at iteration 5300:  26.1261%
+best on training set at iteration 5400:  26.1261%
+best on training set at iteration 5500:  26.2262%
+best on training set at iteration 5600:  26.2262%
+best on training set at iteration 5700:  26.2262%
+best on training set at iteration 5800:  26.5265%
+best on training set at iteration 5900:  26.5265%
+best on training set at iteration 6000:  26.5265%
+best on training set at iteration 6100:  26.5265%
+best on training set at iteration 6200:  26.5265%
+best on training set at iteration 6300:  26.5265%
+best on training set at iteration 6400:  26.5265%
+best on training set at iteration 6500:  26.5265%
+best on training set at iteration 6600:  26.5265%
+best on training set at iteration 6700:  26.5265%
+best on training set at iteration 6800:  26.5265%
+best on training set at iteration 6900:  26.5265%
+best on training set at iteration 7000:  27.027%
+best on training set at iteration 7100:  27.027%
+best on training set at iteration 7200:  27.027%
+best on training set at iteration 7300:  27.2272%
+best on training set at iteration 7400:  27.2272%
+best on training set at iteration 7500:  27.2272%
+best on training set at iteration 7600:  27.2272%
+best on training set at iteration 7700:  27.5275%
+best on training set at iteration 7800:  27.5275%
+best on training set at iteration 7900:  27.5275%
+best on training set at iteration 8000:  27.5275%
+best on training set at iteration 8100:  27.5275%
+best on training set at iteration 8200:  27.5275%
+best on training set at iteration 8300:  27.5275%
+best on training set at iteration 8400:  27.5275%
+best on training set at iteration 8500:  27.5275%
+best on training set at iteration 8600:  27.5275%
+best on training set at iteration 8700:  27.5275%
+best on training set at iteration 8800:  27.5275%
+best on training set at iteration 8900:  27.5275%
+best on training set at iteration 9000:  27.5275%
+best on training set at iteration 9100:  27.5275%
+best on training set at iteration 9200:  27.5275%
+best on training set at iteration 9300:  27.5275%
+best on training set at iteration 9400:  27.5275%
+best on training set at iteration 9500:  27.5275%
+best on training set at iteration 9600:  27.5275%
+best on training set at iteration 9700:  27.5275%
+best on training set at iteration 9800:  27.6276%
+best on training set at iteration 9900:  28.2282%
+
+ 17-[6  15] -> 0
+ 20-[11  16] -> 1
+ 8-[1  4] -> 2
+ 1-[1  16] -> 3
+ 33-[9  14] -> 4
+ 2-[11  16] -> 5
+ 54-[8  16] -> 6
+ 60-[-0  7] -> 7
+ 17-[12  16] -> 8
+ 15-[3  13] -> 9
+ACCURACY on training set 28.2282%
+
+TEST ACCURACY 24.3544%
